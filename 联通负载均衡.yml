@@ -32,7 +32,7 @@ proxies:
     client-fingerprint: chrome
   - name: vless-ws us
     type: vless
-    server: 104.16.182.156
+    server: 162.159.58.140
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -45,7 +45,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us01
     type: vless
-    server: 104.17.56.42
+    server: 172.64.229.101
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -58,7 +58,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us02
     type: vless
-    server: 104.16.50.9
+    server: 162.159.129.190
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -71,7 +71,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us03
     type: vless
-    server: 172.64.150.170
+    server: 162.159.128.115
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -84,7 +84,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us04
     type: vless
-    server: 104.16.7.25
+    server: 162.159.137.97
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -97,7 +97,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: "vmess us"
     type: vmess
-    server: cloud.ysuzy.com
+    server: 162.159.141.85
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     alterId: 0
