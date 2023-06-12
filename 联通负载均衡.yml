@@ -157,7 +157,7 @@ proxies:
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    servername: s0.awsstatic.com # REALITY servername
+    servername: player.live-video.net # REALITY servername
     reality-opts:
       public-key: r-7x4AW5RW4lNpt-hBUOiVEalM6vNIQ3f3tLzubu-lI
     client-fingerprint: chrome # cannot be empty
