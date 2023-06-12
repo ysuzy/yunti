@@ -150,16 +150,16 @@ proxies:
     down: 100 Mbps
   - name: vless 2T
     type: vless
-    server: 192.227.178.29
+    server: 104.28.195.185
     port: 443
-    uuid: 689c06d8-7375-42c3-9055-3be37e869b31
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    servername: yunti.ysuzy.com # REALITY servername
+    servername: s0.awsstatic.com # REALITY servername
     reality-opts:
-      public-key: C8K1pxIllatTdC_sxaN53wvobVdGtThWG4KY6sipPWo
+      public-key: r-7x4AW5RW4lNpt-hBUOiVEalM6vNIQ3f3tLzubu-lI
     client-fingerprint: chrome # cannot be empty
   - name: "vless-ws 2T"
     type: vless
