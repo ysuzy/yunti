@@ -19,39 +19,39 @@ dns:
     - 
     - 
 proxies:
-  - name: 
-    type: 
-    server: 
+- name: vless us
+    type: vless
+    server: cloud.ysuzy.com
     port: 443
-    uuid: 
-    network: 
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    network: tcp
     tls: true
     udp: true
     xudp: true
-    flow: 
-    client-fingerprint: 
-  - name: 
-    type: 
-    server: 162.159.140.235
+    flow: xtls-rprx-vision 
+    client-fingerprint: chrome
+  - name: vless-ws us
+    type: vless
+    server: 104.16.182.156
     port: 443
-    uuid: 
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
     tls: true
-    network: 
-    servername: 
+    network: ws
+    servername: cloud.ysuzy.com
     ws-opts:
-      path: 
+      path: /ulrkws
       headers:
-        Host: 
-  - name: 
-    type: 
-    server: 162.159.134.120
+        Host: cloud.ysuzy.com
+  - name: vless-ws us01
+    type: vless
+    server: 104.17.56.42
     port: 443
-    uuid: 
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
     tls: true
-    network: 
-    servername: 
+    network: ws
+    servername: cloud.ysuzy.com
     ws-opts:
       path: /ulrkws
       headers:
