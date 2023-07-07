@@ -1,23 +1,23 @@
 port: 7890
 socks-port: 7891
 allow-lan: true
-mode: 
-log-level: 
+mode: Rule
+log-level: info
 ipv6: true
 dns:
   enable: true
-  listen: :53
+  listen: 0.0.0.0:53
   ipv6: true
   default-nameserver:
-    - 
-    - 
-  enhanced-mode: 
+    - 114.114.114.114
+    - 223.5.5.5
+  enhanced-mode: redir-host
   nameserver:
-    - 
-    - 
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
   fallback:
-    - 
-    - 
+    - 114.114.114.114
+    - 223.5.5.5
 proxies:
 - name: vless us
     type: vless
