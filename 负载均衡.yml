@@ -190,6 +190,27 @@ proxies:
       path: /?ed=2048
       headers:
         Host: yun.ysuzy.com
+  - name: tuic
+    server: cloud.ysuzy.com
+    port: 17504
+    type: tuic
+    # token: TOKEN
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    password: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    # ip: 127.0.0.1
+    # heartbeat-interval: 10000
+    alpn:
+      - h3
+    disable-sni: true
+    reduce-rtt: true
+    request-timeout: 8000
+    udp-relay-mode: native
+    congestion-controller: bbr
+    # max-udp-relay-packet-size: 1500
+    # fast-open: true
+    # skip-cert-verify: true
+    # max-open-streams: 20
+    # sni: example.com
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -212,6 +233,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -232,6 +254,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
@@ -252,6 +275,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
@@ -272,6 +296,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -301,6 +326,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -320,6 +346,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -339,6 +366,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: 📢 谷歌FCM
     type: select
     proxies:
@@ -359,6 +387,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -395,6 +424,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
