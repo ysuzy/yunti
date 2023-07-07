@@ -19,7 +19,7 @@ dns:
     - 114.114.114.114
     - 223.5.5.5
 proxies:
-- name: vless us
+  - name: vless us
     type: vless
     server: cloud.ysuzy.com
     port: 443
@@ -184,20 +184,22 @@ proxies:
     server: cloud.ysuzy.com
     port: 17504
     type: tuic
-    token: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    # ip: 127.0.0.1 # for overwriting the DNS lookup result of the server address set in option 'server'
+    token: TOKEN
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    password: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    # ip: 127.0.0.1
     # heartbeat-interval: 10000
     alpn: [h3]
     disable-sni: true
     reduce-rtt: true
     request-timeout: 8000
-    udp-relay-mode: native # Available: "native", "quic". Default: "native"
-    congestion-controller: bbr # Available: "cubic", "new_reno", "bbr". Default: "cubic"
+    udp-relay-mode: native
+    congestion-controller: bbr
     # max-udp-relay-packet-size: 1500
     # fast-open: true
     # skip-cert-verify: true
-    # max-open-streams: 20 # default 100, too many open streams may hurt performance
-    # sni: example.com 
+    # max-open-streams: 20
+    # sni: example.com
 proxy-groups:
   - name: 🚀 节点选择
     type: select
