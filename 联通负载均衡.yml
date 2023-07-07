@@ -1,57 +1,57 @@
 port: 7890
 socks-port: 7891
 allow-lan: true
-mode: Rule
-log-level: info
+mode: 
+log-level: 
 ipv6: true
 dns:
   enable: true
-  listen: 0.0.0.0:53
+  listen: :53
   ipv6: true
   default-nameserver:
-    - 114.114.114.114
-    - 223.5.5.5
-  enhanced-mode: redir-host
+    - 
+    - 
+  enhanced-mode: 
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - 
+    - 
   fallback:
-    - 114.114.114.114
-    - 223.5.5.5
+    - 
+    - 
 proxies:
-  - name: vless us
-    type: vless
-    server: cloud.ysuzy.com
+  - name: 
+    type: 
+    server: 
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    network: tcp
+    uuid: 
+    network: 
     tls: true
     udp: true
     xudp: true
-    flow: xtls-rprx-vision 
-    client-fingerprint: chrome
-  - name: vless-ws us
-    type: vless
+    flow: 
+    client-fingerprint: 
+  - name: 
+    type: 
     server: 162.159.140.235
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 
     udp: true
     tls: true
-    network: ws
-    servername: cloud.ysuzy.com
+    network: 
+    servername: 
     ws-opts:
-      path: /ulrkws
+      path: 
       headers:
-        Host: cloud.ysuzy.com
-  - name: vless-ws us01
-    type: vless
+        Host: 
+  - name: 
+    type: 
     server: 162.159.134.120
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 
     udp: true
     tls: true
-    network: ws
-    servername: cloud.ysuzy.com
+    network: 
+    servername: 
     ws-opts:
       path: /ulrkws
       headers:
@@ -180,6 +180,24 @@ proxies:
     server: yunti.ysuzy.com
     port: 443
     password: c1606578-23d5-4476-8546-01dd3e3310c3
+  - name: tuic
+    server: cloud.ysuzy.com
+    port: 17504
+    type: tuic
+    token: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    # ip: 127.0.0.1 # for overwriting the DNS lookup result of the server address set in option 'server'
+    # heartbeat-interval: 10000
+    alpn: [h3]
+    disable-sni: true
+    reduce-rtt: true
+    request-timeout: 8000
+    udp-relay-mode: native # Available: "native", "quic". Default: "native"
+    congestion-controller: bbr # Available: "cubic", "new_reno", "bbr". Default: "cubic"
+    # max-udp-relay-packet-size: 1500
+    # fast-open: true
+    # skip-cert-verify: true
+    # max-open-streams: 20 # default 100, too many open streams may hurt performance
+    # sni: example.com 
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -202,6 +220,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -222,6 +241,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
@@ -242,6 +262,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
@@ -262,6 +283,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -272,6 +294,7 @@ proxy-groups:
       - hysteria
       - trojan-grpc
       - hysteria 2T
+      - tuic
   - name: 📲 电报信息
     type: select
     proxies:
@@ -291,6 +314,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -310,6 +334,7 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -329,88 +354,91 @@ proxy-groups:
       - vless-ws 2T
       - vless 2T
       - trojan 2T
+      - tuic
   - name: 📢 谷歌FCM
     type: select
     proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-      - ♻️ 自动选择
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vmess us
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
-  - name: 🎯 全球直连
-    type: select
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+  - name: 
+    type: 
     proxies:
-      - DIRECT
-      - 🚀 节点选择
-      - ♻️ 自动选择
-  - name: 🛑 全球拦截
-    type: select
+      - 
+      - 
+      - 
+  - name: 
+    type: 
     proxies:
-      - REJECT
-      - DIRECT
-  - name: 🍃 应用净化
-    type: select
+      - 
+      - 
+  - name: 
+    type: 
     proxies:
-      - REJECT
-      - DIRECT
-  - name: 🐟 漏网之鱼
-    type: select
+      - 
+      - 
+  - name: 
+    type: 
     proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-      - ♻️ 自动选择
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vmess us
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
 rules:
-  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
-  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
-  - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连
-  - DOMAIN-SUFFIX,lan,🎯 全球直连
-  - DOMAIN-SUFFIX,local,🎯 全球直连
-  - DOMAIN-SUFFIX,localhost,🎯 全球直连
-  - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
-  - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
-  - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
-  - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
-  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,198.18.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,224.0.0.0/4,🎯 全球直连,no-resolve
-  - IP-CIDR6,::1/128,🎯 全球直连,no-resolve
-  - IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve
-  - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
-  - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
-  - DOMAIN,instant.arubanetworks.com,🎯 全球直连
-  - DOMAIN,setmeup.arubanetworks.com,🎯 全球直连
-  - DOMAIN,router.asus.com,🎯 全球直连
-  - DOMAIN-SUFFIX,hiwifi.com,🎯 全球直连
-  - DOMAIN-SUFFIX,leike.cc,🎯 全球直连
-  - DOMAIN-SUFFIX,miwifi.com,🎯 全球直连
-  - DOMAIN-SUFFIX,my.router,🎯 全球直连
-  - DOMAIN-SUFFIX,p.to,🎯 全球直连
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - DOMAIN-SUFFIX,peiluyou.com,🎯 全球直连
   - DOMAIN-SUFFIX,phicomm.me,🎯 全球直连
   - DOMAIN-SUFFIX,router.ctc,🎯 全球直连
