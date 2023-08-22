@@ -32,17 +32,17 @@ proxies:
     client-fingerprint: chrome
   - name: vless-ws us
     type: vless
-    server: 172.65.204.87
+    server: yunti-2tc.pages.dev
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti-2tc.pages.dev
     ws-opts:
-      path: /ulrkws
+      path: /?ed=2048
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti-2tc.pages.dev
   - name: vless-ws us01
     type: vless
     server: 172.67.96.108
