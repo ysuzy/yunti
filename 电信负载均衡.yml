@@ -32,20 +32,20 @@ proxies:
     client-fingerprint: chrome
   - name: vless-ws us
     type: vless
-    server: 104.16.182.156
+    server: yunti-2tc.pages.dev
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti-2tc.pages.dev
     ws-opts:
-      path: /ulrkws
+      path: /?ed=2048
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti-2tc.pages.dev
   - name: vless-ws us01
     type: vless
-    server: 104.17.56.42
+    server: 104.17.64.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -58,7 +58,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us02
     type: vless
-    server: 162.159.58.59
+    server: 104.18.96.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -71,7 +71,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us03
     type: vless
-    server: 172.64.40.110
+    server: 172.67.64.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -84,7 +84,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us04
     type: vless
-    server: 162.159.58.74
+    server: 104.23.96.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -97,7 +97,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: "vmess us"
     type: vmess
-    server: 162.159.141.85
+    server: 172.64.160.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     alterId: 0
@@ -139,57 +139,68 @@ proxies:
     grpc-opts:
       grpc-service-name: ulrktrojangrpc
   - name: hysteria 2T
-    type: hysteria
-    server: yunti.ysuzy.com
-    port: 666
-    auth_str: 689c06d8-7375-42c3-9055-3be37e869b31
-    alpn:
-      - h3
-    protocol: udp
-    up: 50 Mbps
-    down: 100 Mbps
-  - name: vless 2T
     type: vless
-    server: 104.28.195.185
+    server: 172.67.125.241
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    network: tcp
-    tls: true
-    udp: true
-    flow: xtls-rprx-vision
-    servername: player.live-video.net # REALITY servername
-    reality-opts:
-      public-key: r-7x4AW5RW4lNpt-hBUOiVEalM6vNIQ3f3tLzubu-lI
-    client-fingerprint: chrome # cannot be empty
-  - name: "vless-ws 2T"
-    type: vless
-    server: yunti.ysuzy.com
-    port: 443
-    uuid: 689c06d8-7375-42c3-9055-3be37e869b31
     udp: true
     tls: true
     network: ws
-    servername: yunti.ysuzy.com # priority over wss host
-    # skip-cert-verify: true
+    servername: yun.ysuzy.com
     ws-opts:
-      path: "/mbdows"
+      path: /?ed=2048
       headers:
-        Host: yunti.ysuzy.com
-  - name: trojan 2T
-    type: trojan
-    server: yunti.ysuzy.com
+        Host: yun.ysuzy.com
+  - name: vless 2T
+    type: vless
+    server: 141.101.122.24
     port: 443
-    password: c1606578-23d5-4476-8546-01dd3e3310c3
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    udp: true
+    tls: true
+    network: ws
+    servername: yun.ysuzy.com
+    ws-opts:
+      path: /?ed=2048
+      headers:
+        Host: yun.ysuzy.com
+  - name: "vless-ws 2T"
+    type: vless
+    server: 172.64.106.167
+    port: 443
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    udp: true
+    tls: true
+    network: ws
+    servername: yun.ysuzy.com
+    ws-opts:
+      path: /?ed=2048
+      headers:
+        Host: yun.ysuzy.com
+  - name: trojan 2T
+    type: vless
+    server: 162.159.250.134
+    port: 443
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    udp: true
+    tls: true
+    network: ws
+    servername: yun.ysuzy.com
+    ws-opts:
+      path: /?ed=2048
+      headers:
+        Host: yun.ysuzy.com
   - name: tuic
     server: cloud.ysuzy.com
     port: 17504
     type: tuic
-    token: TOKEN
+    # token: TOKEN
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     password: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     # ip: 127.0.0.1
     # heartbeat-interval: 10000
-    alpn: [h3]
+    alpn:
+      - h3
     disable-sni: true
     reduce-rtt: true
     request-timeout: 8000
@@ -296,7 +307,6 @@ proxy-groups:
       - hysteria
       - trojan-grpc
       - hysteria 2T
-      - tuic
   - name: 📲 电报信息
     type: select
     proxies:
@@ -360,87 +370,87 @@ proxy-groups:
   - name: 📢 谷歌FCM
     type: select
     proxies:
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-  - name: 
-    type: 
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - vless us
+      - vless-ws us
+      - vless-ws us01
+      - vless-ws us02
+      - vless-ws us03
+      - vless-ws us04
+      - vmess us
+      - hysteria
+      - trojan
+      - trojan-grpc
+      - hysteria 2T
+      - vless-ws 2T
+      - vless 2T
+      - trojan 2T
+      - tuic
+  - name: 🎯 全球直连
+    type: select
     proxies:
-      - 
-      - 
-      - 
-  - name: 
-    type: 
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
     proxies:
-      - 
-      - 
-  - name: 
-    type: 
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
     proxies:
-      - 
-      - 
-  - name: 
-    type: 
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
     proxies:
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - vless us
+      - vless-ws us
+      - vless-ws us01
+      - vless-ws us02
+      - vless-ws us03
+      - vless-ws us04
+      - vmess us
+      - hysteria
+      - trojan
+      - trojan-grpc
+      - hysteria 2T
+      - vless-ws 2T
+      - vless 2T
+      - trojan 2T
+      - tuic
 rules:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
+  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
+  - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连
+  - DOMAIN-SUFFIX,lan,🎯 全球直连
+  - DOMAIN-SUFFIX,local,🎯 全球直连
+  - DOMAIN-SUFFIX,localhost,🎯 全球直连
+  - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
+  - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
+  - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
+  - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
+  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,198.18.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,224.0.0.0/4,🎯 全球直连,no-resolve
+  - IP-CIDR6,::1/128,🎯 全球直连,no-resolve
+  - IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve
+  - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
+  - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
+  - DOMAIN,instant.arubanetworks.com,🎯 全球直连
+  - DOMAIN,setmeup.arubanetworks.com,🎯 全球直连
+  - DOMAIN,router.asus.com,🎯 全球直连
+  - DOMAIN-SUFFIX,hiwifi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,leike.cc,🎯 全球直连
+  - DOMAIN-SUFFIX,miwifi.com,🎯 全球直连
+  - DOMAIN-SUFFIX,my.router,🎯 全球直连
+  - DOMAIN-SUFFIX,p.to,🎯 全球直连
   - DOMAIN-SUFFIX,peiluyou.com,🎯 全球直连
   - DOMAIN-SUFFIX,phicomm.me,🎯 全球直连
   - DOMAIN-SUFFIX,router.ctc,🎯 全球直连
