@@ -45,7 +45,7 @@ proxies:
         Host: yunti-2tc.pages.dev
   - name: vless-ws us01
     type: vless
-    server: 172.67.64.0
+    server: 104.26.0.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -58,7 +58,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us02
     type: vless
-    server: 162.159.152.0
+    server: 162.159.128.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -71,7 +71,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us03
     type: vless
-    server: 162.159.200.0
+    server: 172.67.64.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -97,7 +97,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: "vmess us"
     type: vmess
-    server: cloud.ysuzy.com
+    server: 172.64.160.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     alterId: 0
