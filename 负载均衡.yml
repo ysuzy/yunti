@@ -95,24 +95,45 @@ proxies:
       path: /ulrkws
       headers:
         Host: cloud.ysuzy.com
-  - name: "vmess us"
-    type: vmess
-    server: 172.64.160.0
+  - name: vless-ws us05
+    type: vless
+    server: 172.64.128.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    alterId: 0
-    cipher: auto
     udp: true
     tls: true
-    skip-cert-verify: true
-    servername: cloud.ysuzy.com # priority over wss host
     network: ws
+    servername: cloud.ysuzy.com
     ws-opts:
       path: /ulrkws
       headers:
         Host: cloud.ysuzy.com
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol
+  - name: vless-ws us06
+    type: vless
+    server: 162.159.160.0
+    port: 443
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    udp: true
+    tls: true
+    network: ws
+    servername: cloud.ysuzy.com
+    ws-opts:
+      path: /ulrkws
+      headers:
+        Host: cloud.ysuzy.com
+  - name: vless-ws us07
+    type: vless
+    server: 172.64.160.0
+    port: 443
+    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    udp: true
+    tls: true
+    network: ws
+    servername: cloud.ysuzy.com
+    ws-opts:
+      path: /ulrkws
+      headers:
+        Host: cloud.ysuzy.com
   - name: hysteria
     type: hysteria
     server: cloud.ysuzy.com
@@ -138,58 +159,19 @@ proxies:
     udp: true
     grpc-opts:
       grpc-service-name: ulrktrojangrpc
-  - name: hysteria 2T
+- name: vless-ws us08
     type: vless
-    server: 172.67.125.241
+    server: 172.64.192.0
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
     tls: true
     network: ws
-    servername: yun.ysuzy.com
+    servername: cloud.ysuzy.com
     ws-opts:
-      path: /?ed=2048
+      path: /ulrkws
       headers:
-        Host: yun.ysuzy.com
-  - name: vless 2T
-    type: vless
-    server: 141.101.122.24
-    port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    udp: true
-    tls: true
-    network: ws
-    servername: yun.ysuzy.com
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: yun.ysuzy.com
-  - name: "vless-ws 2T"
-    type: vless
-    server: 172.64.106.167
-    port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    udp: true
-    tls: true
-    network: ws
-    servername: yun.ysuzy.com
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: yun.ysuzy.com
-  - name: trojan 2T
-    type: vless
-    server: 162.159.250.134
-    port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    udp: true
-    tls: true
-    network: ws
-    servername: yun.ysuzy.com
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: yun.ysuzy.com
+        Host: cloud.ysuzy.com
   - name: tuic
     server: cloud.ysuzy.com
     port: 17504
@@ -225,14 +207,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: ♻️ 自动选择
     type: url-test
@@ -246,14 +227,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: ⚖️ 负载均衡-散列
     type: load-balance
@@ -267,14 +247,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
@@ -288,14 +267,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: 🌍 国外媒体
     type: select
@@ -304,9 +282,19 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - vless us
+      - vless-ws us
+      - vless-ws us01
+      - vless-ws us02
+      - vless-ws us03
+      - vless-ws us04
+      - vless-ws us05
       - hysteria
+      - trojan
       - trojan-grpc
-      - hysteria 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
+      - tuic
   - name: 📲 电报信息
     type: select
     proxies:
@@ -318,14 +306,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: Ⓜ️ 微软服务
     type: select
@@ -338,14 +325,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: 🍎 苹果服务
     type: select
@@ -358,14 +344,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: 📢 谷歌FCM
     type: select
@@ -379,14 +364,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
   - name: 🎯 全球直连
     type: select
@@ -416,14 +400,13 @@ proxy-groups:
       - vless-ws us02
       - vless-ws us03
       - vless-ws us04
-      - vmess us
+      - vless-ws us05
       - hysteria
       - trojan
       - trojan-grpc
-      - hysteria 2T
-      - vless-ws 2T
-      - vless 2T
-      - trojan 2T
+      - vless-ws us06
+      - vless-ws us07
+      - vless-ws us08
       - tuic
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
