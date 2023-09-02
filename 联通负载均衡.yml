@@ -197,30 +197,9 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
+      - DIRECT
       - ⚖️ 负载均衡-轮询
       - ⚖️ 负载均衡-散列
-      - ♻️ 自动选择
-      - DIRECT
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
-      - tuic
-  - name: ♻️ 自动选择
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 3
-    tolerance: 50
-    proxies:
       - vless us
       - vless-ws us
       - vless-ws us01
@@ -279,7 +258,6 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
-      - ♻️ 自动选择
       - 🎯 全球直连
       - vless us
       - vless-ws us
@@ -357,7 +335,6 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - ♻️ 自动选择
       - vless us
       - vless-ws us
       - vless-ws us01
@@ -377,7 +354,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - ♻️ 自动选择
   - name: 🛑 全球拦截
     type: select
     proxies:
@@ -393,7 +369,6 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - ♻️ 自动选择
       - vless us
       - vless-ws us
       - vless-ws us01
