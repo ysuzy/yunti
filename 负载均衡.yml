@@ -159,19 +159,19 @@ proxies:
     udp: true
     grpc-opts:
       grpc-service-name: ulrktrojangrpc
-- name: vless-ws us08
-    type: vless
-    server: 172.64.192.0
-    port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    udp: true
-    tls: true
-    network: ws
-    servername: cloud.ysuzy.com
-    ws-opts:
-      path: /ulrkws
-      headers:
-        Host: cloud.ysuzy.com
+ - name: vless-ws us08
+   type: vless
+   server: 172.64.192.0
+   port: 443
+   uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+   udp: true
+   tls: true
+   network: ws
+   servername: cloud.ysuzy.com
+   ws-opts:
+     path: /ulrkws
+     headers:
+       Host: cloud.ysuzy.com
   - name: tuic
     server: cloud.ysuzy.com
     port: 17504
