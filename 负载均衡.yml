@@ -84,7 +84,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us04
     type: vless
-    server: 172.64.96.0
+    server: 16.162.37.123
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
@@ -110,7 +110,7 @@ proxies:
         Host: cloud.ysuzy.com
   - name: vless-ws us06
     type: vless
-    server: 104.26.2.148
+    server: 18.166.219.97
     port: 443
     uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
     udp: true
