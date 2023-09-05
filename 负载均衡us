@@ -27,22 +27,24 @@ proxies:
     network: tcp
     tls: true
     udp: true
-    xudp: true
     flow: xtls-rprx-vision 
     client-fingerprint: chrome
+    # xudp: true #default
+    # fingerprint: xxxx
+    # skip-cert-verify: true
   - name: vless-ws us
     type: vless
-    server: yunti-2tc.pages.dev
+    server: yunti.ysuzy.com
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: yunti-2tc.pages.dev
+    servername: yunti.ysuzy.com
     ws-opts:
       path: /otthws
       headers:
-        Host: yunti-2tc.pages.dev
+        Host: yunti.ysuzy.com
   - name: vless-ws us01
     type: vless
     server: 104.26.0.0
@@ -217,7 +219,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 3
+    interval: 300
     strategy: consistent-hashing
     proxies:
       - vless us
@@ -237,7 +239,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 3
+    interval: 300
     strategy: round-robin
     proxies:
       - vless us
