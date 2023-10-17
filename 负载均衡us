@@ -27,11 +27,7 @@ proxies:
     network: tcp
     tls: true
     udp: true
-    flow: xtls-rprx-vision 
-    client-fingerprint: chrome
-    # xudp: true #default
-    # fingerprint: xxxx
-    # skip-cert-verify: true
+    flow: xtls-rprx-vision
   - name: vless-ws us
     type: vless
     server: yunti.ysuzy.com
@@ -40,6 +36,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -53,6 +50,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -66,6 +64,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -79,6 +78,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -92,6 +92,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -105,6 +106,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -118,6 +120,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -131,6 +134,7 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
@@ -144,36 +148,31 @@ proxies:
     udp: true
     tls: true
     network: ws
+    client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: hysteria
-    type: hysteria
+    type: hysteria2
     server: yunti.ysuzy.com
-    ports: 600,50000-51000
-    auth_str: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    alpn:
-      - h3
-    protocol: udp
-    up: 50 Mbps
-    down: 100 Mbps
+    port: 15877
+    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    sni: yunti.ysuzy.com
   - name: trojan
     type: trojan
     server: yunti.ysuzy.com
     port: 443
     password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
   - name: trojan-grpc
+    type: trojan
     server: yunti.ysuzy.com
     port: 443
-    type: trojan
     password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    network: grpc
-    sni: yunti.ysuzy.com
+    client-fingerprint: chrome
     udp: true
-    grpc-opts:
-      grpc-service-name: eqcttrojangrpc
+    sni: yunti.ysuzy.com
   - name: tuic
     server: yunti.ysuzy.com
     type: tuic
