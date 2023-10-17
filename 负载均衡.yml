@@ -23,7 +23,7 @@ proxies:
     type: vless
     server: cloud.ysuzy.com
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     network: tcp
     tls: true
     udp: true
@@ -34,20 +34,20 @@ proxies:
     type: vless
     server: yunti-2tc.pages.dev
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
     servername: yunti-2tc.pages.dev
     ws-opts:
-      path: /?ed=2048
+      path: /eqctws
       headers:
         Host: yunti-2tc.pages.dev
   - name: vless-ws us01
     type: vless
     server: 104.26.0.0
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -60,7 +60,7 @@ proxies:
     type: vless
     server: 162.159.128.0
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -73,7 +73,7 @@ proxies:
     type: vless
     server: 172.67.64.0
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -86,7 +86,7 @@ proxies:
     type: vless
     server: 16.162.37.123
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -99,7 +99,7 @@ proxies:
     type: vless
     server: 16.162.152.191
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -112,7 +112,7 @@ proxies:
     type: vless
     server: 18.166.219.97
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -125,7 +125,7 @@ proxies:
     type: vless
     server: 162.159.58.226
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -138,7 +138,7 @@ proxies:
     type: vless
     server: 172.64.229.53
     port: 443
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
@@ -151,7 +151,7 @@ proxies:
     type: hysteria
     server: cloud.ysuzy.com
     ports: 600,50000-51000
-    auth_str: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    auth_str: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     alpn:
       - h3
     protocol: udp
@@ -161,12 +161,12 @@ proxies:
     type: trojan
     server: cloud.ysuzy.com
     port: 443
-    password: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
   - name: trojan-grpc
     server: cloud.ysuzy.com
     port: 443
     type: trojan
-    password: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     network: grpc
     sni: cloud.ysuzy.com
     udp: true
@@ -177,8 +177,8 @@ proxies:
     port: 17504
     type: tuic
     # token: TOKEN
-    uuid: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
-    password: 5952b181-29ff-4cfc-83d4-55cbe0ab8254
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     # ip: 127.0.0.1
     # heartbeat-interval: 10000
     alpn:
