@@ -42,7 +42,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us01
@@ -55,7 +55,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us02
@@ -68,7 +68,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us03
@@ -81,7 +81,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us04
@@ -94,7 +94,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us05
@@ -107,7 +107,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us06
@@ -120,7 +120,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us07
@@ -133,7 +133,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us08
@@ -146,7 +146,7 @@ proxies:
     network: ws
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /otthws
+      path: /eqctws
       headers:
         Host: yunti.ysuzy.com
   - name: hysteria
@@ -173,7 +173,7 @@ proxies:
     sni: yunti.ysuzy.com
     udp: true
     grpc-opts:
-      grpc-service-name: ulrktrojangrpc
+      grpc-service-name: eqcttrojangrpc
   - name: tuic
     server: yunti.ysuzy.com
     port: 27596
