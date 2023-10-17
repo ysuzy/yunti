@@ -150,7 +150,7 @@ proxies:
       headers:
         Host: yunti.ysuzy.com
   - name: hysteria
-    type: hysteria2
+    type: hysteria
     server: yunti.ysuzy.com
     port: 15877
     password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
