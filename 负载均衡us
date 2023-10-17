@@ -150,15 +150,11 @@ proxies:
       headers:
         Host: yunti.ysuzy.com
   - name: hysteria
-    type: hysteria
+    type: hysteria2
     server: yunti.ysuzy.com
-    ports: 15877
-    auth_str: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    alpn:
-      - h3
-    protocol: udp
-    up: 50 Mbps
-    down: 100 Mbps
+    port: 15877
+    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    sni: yunti.ysuzy.com
   - name: trojan
     type: trojan
     server: yunti.ysuzy.com
@@ -176,25 +172,16 @@ proxies:
       grpc-service-name: eqcttrojangrpc
   - name: tuic
     server: yunti.ysuzy.com
-    port: 27596
     type: tuic
-    # token: TOKEN
+    port: 27596
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    # ip: 127.0.0.1
-    # heartbeat-interval: 10000
     alpn:
-      - h3
+     - h3
+    congestion-controller: bbr
     disable-sni: true
     reduce-rtt: true
-    request-timeout: 8000
-    udp-relay-mode: native
-    congestion-controller: bbr
-    # max-udp-relay-packet-size: 1500
-    # fast-open: true
-    # skip-cert-verify: true
-    # max-open-streams: 20
-    # sni: example.com
+    sni: 8a509f6c-singbox_tuic
 proxy-groups:
   - name: 🚀 节点选择
     type: select
