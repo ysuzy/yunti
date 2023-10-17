@@ -21,28 +21,30 @@ dns:
 proxies:
   - name: vless us
     type: vless
-    server: cloud.ysuzy.com
+    server: yunti.ysuzy.com
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     network: tcp
     tls: true
     udp: true
-    xudp: true
     flow: xtls-rprx-vision 
     client-fingerprint: chrome
+    # xudp: true #default
+    # fingerprint: xxxx
+    # skip-cert-verify: true
   - name: vless-ws us
     type: vless
-    server: yunti-2tc.pages.dev
+    server: yunti.ysuzy.com
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: yunti-2tc.pages.dev
+    servername: yunti.ysuzy.com
     ws-opts:
       path: /eqctws
       headers:
-        Host: yunti-2tc.pages.dev
+        Host: yunti.ysuzy.com
   - name: vless-ws us01
     type: vless
     server: 104.26.0.0
@@ -51,11 +53,11 @@ proxies:
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti.ysuzy.com
   - name: vless-ws us02
     type: vless
     server: 162.159.128.0
@@ -64,143 +66,123 @@ proxies:
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti.ysuzy.com
   - name: vless-ws us03
     type: vless
-    server: 172.67.64.0
+    server: 20.189.114.189
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti.ysuzy.com
   - name: vless-ws us04
     type: vless
-    server: 16.162.37.123
+    server: 103.113.158.81
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti.ysuzy.com
   - name: vless-ws us05
     type: vless
-    server: 16.162.152.191
+    server: 162.159.45.19
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti.ysuzy.com
   - name: vless-ws us06
     type: vless
-    server: 18.166.219.97
+    server: 198.41.216.93
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti.ysuzy.com
   - name: vless-ws us07
     type: vless
-    server: 162.159.58.226
+    server: 198.41.197.181
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
+        Host: yunti.ysuzy.com
   - name: vless-ws us08
     type: vless
-    server: 172.64.229.53
+    server: 162.159.58.147
     port: 443
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
     tls: true
     network: ws
-    servername: cloud.ysuzy.com
+    servername: yunti.ysuzy.com
     ws-opts:
-      path: /ulrkws
+      path: /eqctws
       headers:
-        Host: cloud.ysuzy.com
-  - name: hysteria
-    type: hysteria
-    server: cloud.ysuzy.com
-    ports: 600,50000-51000
-    auth_str: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    alpn:
-      - h3
-    protocol: udp
-    up: 50 Mbps
-    down: 100 Mbps
+        Host: yunti.ysuzy.com
   - name: trojan
     type: trojan
-    server: cloud.ysuzy.com
+    server: yunti.ysuzy.com
     port: 443
     password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
   - name: trojan-grpc
-    server: cloud.ysuzy.com
+    server: yunti.ysuzy.com
     port: 443
     type: trojan
     password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     network: grpc
-    sni: cloud.ysuzy.com
+    sni: yunti.ysuzy.com
     udp: true
     grpc-opts:
-      grpc-service-name: ulrktrojangrpc
+      grpc-service-name: eqcttrojangrpc
   - name: tuic
-    server: cloud.ysuzy.com
-    port: 17504
+    server: yunti.ysuzy.com
     type: tuic
-    # token: TOKEN
+    port: 27596
     uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    # ip: 127.0.0.1
-    # heartbeat-interval: 10000
     alpn:
-      - h3
+     - h3
+    congestion-controller: bbr
     disable-sni: true
     reduce-rtt: true
-    request-timeout: 8000
-    udp-relay-mode: native
-    congestion-controller: bbr
-    # max-udp-relay-packet-size: 1500
-    # fast-open: true
-    # skip-cert-verify: true
-    # max-open-streams: 20
-    # sni: example.com
+    sni: 8a509f6c-singbox_tuic
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
+      - DIRECT
       - ⚖️ 负载均衡-轮询
       - ⚖️ 负载均衡-散列
-      - ♻️ 自动选择
-      - DIRECT
       - vless us
       - vless-ws us
       - vless-ws us01
@@ -208,27 +190,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
-      - tuic
-  - name: ♻️ 自动选择
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 3
-    tolerance: 50
-    proxies:
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -238,7 +199,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 3
+    interval: 300
     strategy: consistent-hashing
     proxies:
       - vless us
@@ -248,7 +209,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -258,7 +218,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 3
+    interval: 300
     strategy: round-robin
     proxies:
       - vless us
@@ -268,7 +228,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -279,7 +238,6 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
-      - ♻️ 自动选择
       - 🎯 全球直连
       - vless us
       - vless-ws us
@@ -288,7 +246,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -307,7 +264,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -326,7 +282,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -345,7 +300,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -357,7 +311,6 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - ♻️ 自动选择
       - vless us
       - vless-ws us
       - vless-ws us01
@@ -365,7 +318,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
@@ -377,7 +329,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - ♻️ 自动选择
   - name: 🛑 全球拦截
     type: select
     proxies:
@@ -393,7 +344,6 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - ♻️ 自动选择
       - vless us
       - vless-ws us
       - vless-ws us01
@@ -401,7 +351,6 @@ proxy-groups:
       - vless-ws us03
       - vless-ws us04
       - vless-ws us05
-      - hysteria
       - trojan
       - trojan-grpc
       - vless-ws us06
