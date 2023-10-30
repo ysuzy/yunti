@@ -40,7 +40,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: "8a509f6c-vless_grpc"
@@ -80,15 +80,17 @@ proxies:
     udp: true
     sni: yunti.ysuzy.com
   - name: "8a509f6c-Trojan_gRPC"
+    type: vless
     server: yunti.ysuzy.com
     port: 443
-    type: trojan
-    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    network: grpc
-    sni: yunti.ysuzy.com
+    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
     udp: true
+    tls: true
+    network: grpc
+    client-fingerprint: chrome
+    servername: yunti.ysuzy.com
     grpc-opts:
-      grpc-service-name: eqcttrojangrpc
+      grpc-service-name: rlylgrpc
   - name: "8a509f6c-singbox_hysteria2"
     type: hysteria2
     server: yunti.ysuzy.com
@@ -119,7 +121,7 @@ proxies:
     udp: true
     servername: yunti.ysuzy.com
     reality-opts:
-      public-key: 7MYLT5OosRNMNzt82fLFZSsEL7p2lk-OcDGzuUYe9jY
+      public-key: lwf9rzAuUZ3XOFfPYkVuqkuZAEKKI1FpLbnms-S1IXg
       short-id: 6ba85179e30d4fc2
     grpc-opts:
       grpc-service-name: "grpc"
