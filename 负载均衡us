@@ -28,6 +28,7 @@ proxies:
     tls: true
     udp: true
     flow: xtls-rprx-vision
+    client-fingerprint: chrome
   - name: vless-ws us
     type: vless
     server: yunti.ysuzy.com
@@ -39,7 +40,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us01
@@ -53,7 +54,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us02
@@ -67,7 +68,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us03
@@ -81,7 +82,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us04
@@ -95,7 +96,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us05
@@ -109,7 +110,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us06
@@ -123,7 +124,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us07
@@ -137,7 +138,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: vless-ws us08
@@ -151,7 +152,7 @@ proxies:
     client-fingerprint: chrome
     servername: yunti.ysuzy.com
     ws-opts:
-      path: /eqctws
+      path: /rlylws
       headers:
         Host: yunti.ysuzy.com
   - name: hysteria
