@@ -70,14 +70,16 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
-      
+
 proxy-groups:
-  - name: 🚀 节点选择
+  - name: 手动切换
     type: select
     proxies:
       - DIRECT
       - ⚖️ 负载均衡-轮询
       - ⚖️ 负载均衡-散列
+    use:
+      - dckfejtkal_provider
       
   - name: ⚖️ 负载均衡-散列
     type: load-balance
@@ -86,8 +88,6 @@ proxy-groups:
     strategy: consistent-hashing
     use:
       - dckfejtkal_provider
-    proxies: null
-    
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
@@ -95,64 +95,137 @@ proxy-groups:
     strategy: round-robin
     use:
       - dckfejtkal_provider
-    proxies: null 
-  - name: 🌍 国外媒体
+  - name: 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 36000
+    tolerance: 50
+    use:
+      - dckfejtkal_provider
+    proxies: null
+
+  - name: 全球代理
     type: select
     use:
       - dckfejtkal_provider
     proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-  - name: 📲 电报信息
+      - 手动切换
+      - 自动选择
+
+  - name: 流媒体
     type: select
     use:
       - dckfejtkal_provider
     proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-  - name: Ⓜ️ 微软服务
+      - 手动切换
+      - 自动选择
+      - DIRECT
+  - name: DNS_Proxy
     type: select
     use:
       - dckfejtkal_provider
     proxies:
-      - 🎯 全球直连
-      - 🚀 节点选择
-  - name: 🍎 苹果服务
+      - 自动选择
+      - DIRECT
+
+  - name: Telegram
     type: select
     use:
       - dckfejtkal_provider
     proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-  - name: 📢 谷歌FCM
+      - 手动切换
+      - 自动选择
+  - name: Google
     type: select
     use:
       - dckfejtkal_provider
     proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-  - name: 🎯 全球直连
+      - 手动切换
+      - 自动选择
+      - DIRECT
+  - name: YouTube
     type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+  - name: Netflix
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+  - name: Spotify
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+      - DIRECT
+  - name: HBO
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+  - name: Bing
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 自动选择
+  - name: OpenAI
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 自动选择
+      - 手动切换
+  - name: Disney
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+  - name: GitHub
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+      - DIRECT
+
+  - name: 国内媒体
+    type: select
+    use:
+      - dckfejtkal_provider
     proxies:
       - DIRECT
-      - 🚀 节点选择
-  - name: 🛑 全球拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 🍃 应用净化
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 🐟 漏网之鱼
+  - name: 本地直连
     type: select
     use:
       - dckfejtkal_provider
     proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
+      - DIRECT
+      - 自动选择
+  - name: 漏网之鱼
+    type: select
+    use:
+      - dckfejtkal_provider
+    proxies:
+      - DIRECT
+      - 手动切换
+      - 自动选择
 rule-providers:
   lan:
     type: http
