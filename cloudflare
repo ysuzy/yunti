@@ -1,1 +1,15 @@
-
+proxies:
+- type: vless
+  name: hello-world-sweet-truth-30ed.su791219573.workers.dev
+  server: hello-world-sweet-truth-30ed.su791219573.workers.dev
+  port: 443
+  uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+  network: ws
+  tls: true
+  udp: false
+  sni: hello-world-sweet-truth-30ed.su791219573.workers.dev
+  client-fingerprint: chrome
+  ws-opts:
+    path: "/?ed=2048"
+    headers:
+      host: hello-world-sweet-truth-30ed.su791219573.workers.dev
