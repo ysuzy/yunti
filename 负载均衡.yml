@@ -111,7 +111,6 @@ proxy-groups:
       - dckfejtkal_provider
       - brcriutgqq_provider2
     proxies: null
-
   - name: 全球代理
     type: select
     use:
