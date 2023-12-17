@@ -66,7 +66,7 @@ proxy-providers:
   brcriutgqq_provider:
     type: http
     path: ./brcriutgqq_provider.yaml
-    url: https://yunti.ysuzy.com:828/s/clashMeta/8145a1ff4760e94f00bf6c40e059d10a
+    url: https://yunti.ysuzy.com:828/s/clashMetaProfiles/cd47b9861b79774417e0bf7619c3ed75
     interval: 3600
   brcriutgqq_provider2:
     type: http
@@ -79,7 +79,7 @@ proxy-providers:
       interval: 300
   brcriutgqq_provider3:
     type: http
-    path: ./provider2.yaml
+    path: ./provider3.yaml
     url: https://raw.githubusercontent.com/ysuzy/yunti/main/cloudflare
     interval: 3600
     health-check:
