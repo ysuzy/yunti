@@ -1,9 +1,11 @@
 mixed-port: 7890
 unified-delay: false
 geodata-mode: true
-tcp-concurrent: false
+tcp-concurrent: true
 find-process-mode: strict
 global-client-fingerprint: chrome
+geo-auto-update: true
+geo-update-interval: 168
 
 allow-lan: true
 mode: rule
@@ -89,7 +91,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 300
+    interval: 30
     strategy: consistent-hashing
     use:
       - brcriutgqq_provider
@@ -97,7 +99,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 300
+    interval: 30
     strategy: round-robin
     use:
       - brcriutgqq_provider
