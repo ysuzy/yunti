@@ -84,7 +84,7 @@ proxy-groups:
       - ⚖️ 负载均衡-轮询
       - ⚖️ 负载均衡-散列
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
   - name: ⚖️ 负载均衡-散列
     type: load-balance
@@ -92,7 +92,7 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
@@ -100,7 +100,7 @@ proxy-groups:
     interval: 300
     strategy: round-robin
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
   - name: 自动选择
     type: url-test
@@ -108,13 +108,13 @@ proxy-groups:
     interval: 36000
     tolerance: 50
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies: null
   - name: 全球代理
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 手动切换
@@ -123,7 +123,7 @@ proxy-groups:
   - name: 流媒体
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 手动切换
@@ -132,7 +132,7 @@ proxy-groups:
   - name: DNS_Proxy
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 自动选择
@@ -141,7 +141,7 @@ proxy-groups:
   - name: Telegram
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 手动切换
@@ -149,7 +149,7 @@ proxy-groups:
   - name: Google
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 手动切换
@@ -158,7 +158,7 @@ proxy-groups:
   - name: YouTube
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 手动切换
@@ -166,7 +166,7 @@ proxy-groups:
   - name: Netflix
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 流媒体
@@ -175,7 +175,7 @@ proxy-groups:
   - name: Spotify
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 流媒体
@@ -185,7 +185,7 @@ proxy-groups:
   - name: HBO
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 流媒体
@@ -194,14 +194,14 @@ proxy-groups:
   - name: Bing
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 自动选择
   - name: OpenAI
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 自动选择
@@ -209,7 +209,7 @@ proxy-groups:
   - name: Disney
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 流媒体
@@ -218,7 +218,7 @@ proxy-groups:
   - name: GitHub
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - 手动切换
@@ -228,14 +228,14 @@ proxy-groups:
   - name: 国内媒体
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - DIRECT
   - name: 本地直连
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - DIRECT
@@ -243,7 +243,7 @@ proxy-groups:
   - name: 漏网之鱼
     type: select
     use:
-      - dckfejtkal_provider
+      - brcriutgqq_provider
       - brcriutgqq_provider2
     proxies:
       - DIRECT
