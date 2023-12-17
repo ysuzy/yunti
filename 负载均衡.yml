@@ -77,6 +77,21 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
+  brcriutgqq_provider3:
+    - type: vless
+    name: hello-world-sweet-truth-30ed.su791219573.workers.dev
+    server: hello-world-sweet-truth-30ed.su791219573.workers.dev
+    port: 443
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+    network: ws
+    tls: true
+    udp: false
+    sni: hello-world-sweet-truth-30ed.su791219573.workers.dev
+    client-fingerprint: chrome
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        host: hello-world-sweet-truth-30ed.su791219573.workers.dev
 
 proxy-groups:
   - name: 手动切换
@@ -88,6 +103,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
@@ -96,6 +112,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
@@ -104,6 +121,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
   - name: 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -112,12 +130,14 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies: null
   - name: 全球代理
     type: select
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 手动切换
       - 自动选择
@@ -127,6 +147,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 手动切换
       - 自动选择
@@ -136,6 +157,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 自动选择
       - DIRECT
@@ -145,6 +167,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 手动切换
       - 自动选择
@@ -153,6 +176,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 手动切换
       - 自动选择
@@ -162,6 +186,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 手动切换
       - 自动选择
@@ -170,6 +195,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 流媒体
       - 手动切换
@@ -179,6 +205,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 流媒体
       - 手动切换
@@ -189,6 +216,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 流媒体
       - 手动切换
@@ -198,6 +226,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 自动选择
   - name: OpenAI
@@ -205,6 +234,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 自动选择
       - 手动切换
@@ -213,6 +243,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 流媒体
       - 手动切换
@@ -222,6 +253,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - 手动切换
       - 自动选择
@@ -232,6 +264,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - DIRECT
   - name: 本地直连
@@ -239,6 +272,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - DIRECT
       - 自动选择
@@ -247,6 +281,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider
       - brcriutgqq_provider2
+      - brcriutgqq_provider3
     proxies:
       - DIRECT
       - 手动切换
