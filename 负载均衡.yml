@@ -84,7 +84,7 @@ proxy-providers:
   brcriutgqq_provider3:
     type: http
     path: ./provider3.yaml
-    url: https://raw.githubusercontent.com/ysuzy/yunti/main/cloudflare
+    url: https://flower.ysuzy.com/sub/3b2dda97-a7a0-4c1d-82e5-e7799921b68a?format=clash #https://raw.githubusercontent.com/ysuzy/yunti/main/cloudflare
     interval: 3600
     health-check:
       enable: false
