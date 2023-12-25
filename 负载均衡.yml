@@ -93,7 +93,7 @@ proxy-providers:
   brcriutgqq_provider4:
     type: http
     path: ./provider3.yaml
-    url: https://raw.githubusercontent.com/ysuzy/yunti/main/flower
+    url: #https://raw.githubusercontent.com/ysuzy/yunti/main/flower
     interval: 3600
     health-check:
       enable: false
