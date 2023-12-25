@@ -92,7 +92,7 @@ proxy-providers:
       interval: 300
   brcriutgqq_provider4:
     type: http
-    path: ./provider3.yaml
+    path: ./provider4.yaml
     url: https://yunti.ysuzy.com:828/s/clashMetaProfiles/cd47b9861b79774417e0bf7619c3ed75
     interval: 3600
     health-check:
