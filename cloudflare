@@ -1,14 +1,15 @@
-- type: vless
-  name: flare.ysuzy.com
-  server: flare.ysuzy.com
-  port: 443
-  uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
-  network: ws
-  tls: true
-  udp: false
-  sni: flare.ysuzy.com
-  client-fingerprint: chrome
-  ws-opts:
-    path: "/?ed=2048"
-    headers:
-      host: flare.ysuzy.com
+proxies:
+ - type: vless
+   name: flare.ysuzy.com
+   server: flare.ysuzy.com
+   port: 443
+   uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+   network: ws
+   tls: true
+   udp: false
+   sni: flare.ysuzy.com
+   client-fingerprint: chrome
+   ws-opts:
+     path: "/?ed=2048"
+     headers:
+       host: flare.ysuzy.com
