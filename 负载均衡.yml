@@ -90,6 +90,15 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
+  brcriutgqq_provider4:
+    type: http
+    path: ./provider3.yaml
+    url: https://raw.githubusercontent.com/ysuzy/yunti/main/flower
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 
 proxy-groups:
   - name: 手动切换
@@ -101,6 +110,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
@@ -109,6 +119,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
@@ -117,6 +128,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
   - name: 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -125,12 +137,14 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies: null
   - name: 全球代理
     type: select
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 手动切换
       - 自动选择
@@ -140,6 +154,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 手动切换
       - 自动选择
@@ -149,6 +164,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 自动选择
       - DIRECT
@@ -158,6 +174,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 手动切换
       - 自动选择
@@ -166,6 +183,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 手动切换
       - 自动选择
@@ -175,6 +193,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 手动切换
       - 自动选择
@@ -183,6 +202,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 流媒体
       - 手动切换
@@ -192,6 +212,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 流媒体
       - 手动切换
@@ -202,6 +223,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 流媒体
       - 手动切换
@@ -211,6 +233,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 自动选择
   - name: OpenAI
@@ -218,6 +241,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 自动选择
       - 手动切换
@@ -226,6 +250,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 流媒体
       - 手动切换
@@ -235,6 +260,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - 手动切换
       - 自动选择
@@ -245,6 +271,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - DIRECT
   - name: 本地直连
@@ -252,6 +279,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - DIRECT
       - 自动选择
@@ -260,6 +288,7 @@ proxy-groups:
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
+      - brcriutgqq_provider4
     proxies:
       - DIRECT
       - 手动切换
