@@ -395,7 +395,8 @@ rules:
   - DOMAIN-SUFFIX,xvideos.com,REJECT
   - DOMAIN-SUFFIX,javdb.com,REJECT
   - DOMAIN-SUFFIX,pronhub.com,REJECT
-  - DOMAIN-SUFFIX,telegram.org,telegram.com,REJECT
+  - DOMAIN-SUFFIX,telegram.org,REJECT
+  - DOMAIN-SUFFIX,telegram.com,REJECT
   - RULE-SET,YouTube,YouTube,no-resolve
   - RULE-SET,Google,Google,no-resolve
   - RULE-SET,GitHub,GitHub
