@@ -92,7 +92,7 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
-  - name: 手动选择
+  - name: 手动切换
     type: select
     proxies:
       - DIRECT
