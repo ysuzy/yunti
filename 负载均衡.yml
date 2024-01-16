@@ -92,12 +92,14 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
-  - name: 手动切换
+  - name: 选择节点
     type: select
     proxies:
       - DIRECT
       - ⚖️ 负载均衡-轮询
       - ⚖️ 负载均衡-散列
+      - 手动切换
+      - 自动选择
     use:
       - brcriutgqq_provider2
       - brcriutgqq_provider3
