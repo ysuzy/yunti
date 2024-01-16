@@ -104,7 +104,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 30
+    interval: 300
     strategy: consistent-hashing
     use:
       - brcriutgqq_provider2
@@ -112,7 +112,7 @@ proxy-groups:
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
     url: https://www.google.com/generate_204
-    interval: 30
+    interval: 300
     strategy: round-robin
     use:
       - brcriutgqq_provider2
