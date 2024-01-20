@@ -13,6 +13,8 @@ log-level: info
 ipv6: true
 
 external-controller: 127.0.0.1:9090
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" #从 GitHub Pages 分支获取
+
 
 geox-url:
   geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
