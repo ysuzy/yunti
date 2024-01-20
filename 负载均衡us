@@ -19,143 +19,77 @@ dns:
     - 114.114.114.114
     - 223.5.5.5
 proxies:
-  - name: vless us
+  - name: "Vision"
     type: vless
-    server: yunti.ysuzy.com
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    server: cloud.ysuzy.com
+    port: 909
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
     client-fingerprint: chrome
-  - name: vless-ws us
+  - name: "VLESS_WS"
     type: vless
-    server: yunti.ysuzy.com
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    server: cloud.ysuzy.com
+    port: 909
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
     udp: true
     tls: true
     network: ws
     client-fingerprint: chrome
-    servername: yunti.ysuzy.com
+    servername: cloud.ysuzy.com
     ws-opts:
-      path: /rlylws
+      path: /nuntws
       headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us01
+        Host: cloud.ysuzy.com
+  - name: "vless_grpc"
     type: vless
-    server: 104.26.0.0
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    server: cloud.ysuzy.com
+    port: 909
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
     udp: true
     tls: true
-    network: ws
+    network: grpc
     client-fingerprint: chrome
-    servername: yunti.ysuzy.com
-    ws-opts:
-      path: /rlylws
-      headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us02
-    type: vless
-    server: 162.159.128.0
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    servername: cloud.ysuzy.com
+    grpc-opts:
+      grpc-service-name: nuntgrpc
+  - name: "VMess_WS"
+    type: vmess
+    server: cloud.ysuzy.com
+    port: 909
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+    alterId: 0
+    cipher: none
     udp: true
     tls: true
-    network: ws
     client-fingerprint: chrome
-    servername: yunti.ysuzy.com
+    servername: cloud.ysuzy.com
+    network: ws
     ws-opts:
-      path: /rlylws
+      path: /nuntvws
       headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us03
-    type: vless
-    server: 20.189.114.189
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+        Host: cloud.ysuzy.com
+  - name: "trojan_tcp"
+    type: trojan
+    server: cloud.ysuzy.com
+    port: 909
+    password: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+    client-fingerprint: chrome
     udp: true
-    tls: true
-    network: ws
-    client-fingerprint: chrome
-    servername: yunti.ysuzy.com
-    ws-opts:
-      path: /rlylws
-      headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us04
-    type: vless
-    server: 103.113.158.81
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    sni: cloud.ysuzy.com
+  - name: "Trojan_gRPC"
+    server: cloud.ysuzy.com
+    port: 909
+    type: trojan
+    password: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+    network: grpc
+    sni: cloud.ysuzy.com
     udp: true
-    tls: true
-    network: ws
-    client-fingerprint: chrome
-    servername: yunti.ysuzy.com
-    ws-opts:
-      path: /rlylws
-      headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us05
-    type: vless
-    server: 162.159.45.19
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    udp: true
-    tls: true
-    network: ws
-    client-fingerprint: chrome
-    servername: yunti.ysuzy.com
-    ws-opts:
-      path: /rlylws
-      headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us06
-    type: vless
-    server: 198.41.216.93
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    udp: true
-    tls: true
-    network: ws
-    client-fingerprint: chrome
-    servername: yunti.ysuzy.com
-    ws-opts:
-      path: /rlylws
-      headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us07
-    type: vless
-    server: 198.41.197.181
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    udp: true
-    tls: true
-    network: ws
-    client-fingerprint: chrome
-    servername: yunti.ysuzy.com
-    ws-opts:
-      path: /rlylws
-      headers:
-        Host: yunti.ysuzy.com
-  - name: vless-ws us08
-    type: vless
-    server: 162.159.58.147
-    port: 443
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    udp: true
-    tls: true
-    network: ws
-    client-fingerprint: chrome
-    servername: yunti.ysuzy.com
-    ws-opts:
-      path: /rlylws
-      headers:
-        Host: yunti.ysuzy.com
-  - name: hysteria
+    grpc-opts:
+      grpc-service-name: nunttrojangrpc
+  - name: "hysteria2"
     type: hysteria2
     server: cloud.ysuzy.com
     port: 29224
@@ -165,31 +99,47 @@ proxies:
     sni: cloud.ysuzy.com
     up: "50 Mbps"
     down: "100 Mbps"
-  - name: trojan
-    type: trojan
-    server: yunti.ysuzy.com
-    port: 443
-    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-  - name: trojan-grpc
-    type: trojan
-    server: yunti.ysuzy.com
-    port: 443
-    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    client-fingerprint: chrome
+  - name: "reality_vision"
+    type: vless
+    server: 148.135.53.125
+    port: 909
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+    network: tcp
+    tls: true
     udp: true
-    sni: yunti.ysuzy.com
-  - name: tuic
-    server: yunti.ysuzy.com
+    flow: xtls-rprx-vision
+    servername: one-piece.com
+    reality-opts:
+      public-key: 4KXa7LiiuLiSeD2AQMU9NHmjCJ_0SLfVsfzpAitX3kw
+      short-id: 6ba85179e30d4fc2
+    client-fingerprint: chrome
+  - name: "reality_grpc"
+    type: vless
+    server: 148.135.53.125
+    port: 909
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+    network: grpc
+    tls: true
+    udp: true
+    servername: one-piece.com
+    reality-opts:
+      public-key: 4KXa7LiiuLiSeD2AQMU9NHmjCJ_0SLfVsfzpAitX3kw
+      short-id: 6ba85179e30d4fc2
+    grpc-opts:
+      grpc-service-name: "grpc"
+    client-fingerprint: chrome
+  - name: "tuic"
+    server: cloud.ysuzy.com
     type: tuic
-    port: 27596
-    uuid: 8a509f6c-fe53-4a17-81a2-48452fd2173a
-    password: 8a509f6c-fe53-4a17-81a2-48452fd2173a
+    port: 42394
+    uuid: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
+    password: 3b2dda97-a7a0-4c1d-82e5-e7799921b68a
     alpn:
      - h3
     congestion-controller: bbr
     disable-sni: true
     reduce-rtt: true
-    sni: 8a509f6c-singbox_tuic
+    sni: 3b2dda97-singbox_tuic
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -197,19 +147,14 @@ proxy-groups:
       - DIRECT
       - ⚖️ 负载均衡-轮询
       - ⚖️ 负载均衡-散列
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: ⚖️ 负载均衡-散列
     type: load-balance
@@ -217,19 +162,14 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
@@ -237,114 +177,84 @@ proxy-groups:
     interval: 300
     strategy: round-robin
     proxies:
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
   - name: 🎯 全球直连
     type: select
@@ -366,19 +276,14 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - vless us
-      - vless-ws us
-      - vless-ws us01
-      - vless-ws us02
-      - vless-ws us03
-      - vless-ws us04
-      - vless-ws us05
-      - hysteria
-      - trojan
-      - trojan-grpc
-      - vless-ws us06
-      - vless-ws us07
-      - vless-ws us08
+      - Vision
+      - VLESS_WS
+      - vless_grpc
+      - VMess_WS
+      - trojan_tcp
+      - hysteria2
+      - reality_vision
+      - reality_grpc
       - tuic
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
