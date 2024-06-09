@@ -12,8 +12,8 @@ mode: rule
 log-level: info
 ipv6: true
 
-external-controller: 127.0.0.1:9090
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" #从 GitHub Pages 分支获取
+#external-controller: 127.0.0.1:9090
+#external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" #从 GitHub Pages 分支获取
 
 
 geox-url:
@@ -77,7 +77,7 @@ proxy-providers:
   brcriutgqq_provider2:
     type: http
     path: ./provider2.yaml
-    url: https://cloud.ysuzy.com:909/s/clashMetaProfiles/294d9732fc9506207d5e347446d2f701
+    url: https://cloud.ysuzy.com:18366/s/clashMetaProfiles/294d9732fc9506207d5e347446d2f701
     interval: 3600
     health-check:
       enable: false
