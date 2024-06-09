@@ -64,7 +64,7 @@ dns:
       - 114.114.114.114
       - https://dns.alidns.com/dns-query#h3=true
 
-proxy-providers:
+#proxy-providers:
   #brcriutgqq_provider:
     #type: http
     #path: ./brcriutgqq_provider.yaml
@@ -74,6 +74,7 @@ proxy-providers:
       #enable: false
       #url: http://www.gstatic.com/generate_204
       #interval: 300
+      
   brcriutgqq_provider2:
     type: http
     path: ./provider2.yaml
@@ -83,6 +84,7 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
+      
   brcriutgqq_provider3:
     type: http
     path: ./provider3.yaml
