@@ -17,7 +17,7 @@ proxy-providers:
 
   provider3:
     <<: *p  # 继承通用配置
-    url: "https://cloud.ysuzy.com:18366/s/clashMetaProfiles/294d9732fc9506207d5e347446d2f701"
+    url: "https://cloud.ysuzy.com:18366/s/clashMeta/294d9732fc9506207d5e347446d2f701"
 
 # URL 测试配置
 u:: &u
