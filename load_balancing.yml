@@ -6,7 +6,7 @@ p: &p
 # 配置代理提供者
 proxy-providers:
   # 第一个代理提供者
- provider1:
+  provider1:
     <<: *p  # 继承通用配置
     url: "https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
 
