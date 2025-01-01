@@ -1,14 +1,9 @@
-# https://mihomo.party/docs/guide/override/yaml
-# 延迟检测 URL
-p: &p
-  {type: http, interval: 3600, header: {User-Agent: ["meta", "clash.meta", "Clash/v1.18.0", "clash"]}, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, lazy: true}}
-
 # 配置代理提供者
 proxy-providers:
   # 第一个代理提供者
-  # provider1:
-  #  <<: *p  # 继承通用配置
-  #  url: "https://ghgo.xyz/https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml"
+  provider1:
+    <<: *p  # 继承通用配置
+    url: "https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
 
   # 第二个代理提供者
   provider2:
@@ -17,13 +12,13 @@ proxy-providers:
 
   provider3:
     <<: *p  # 继承通用配置
-    url: "https://cloud.ysuzy.com:18366/s/clashMetaProfiles/294d9732fc9506207d5e347446d2f701"
+    url: "https://cloud.ysuzy.com:18366/s/clashMeta/294d9732fc9506207d5e347446d2f701"
 
 # URL 测试配置
 u:: &u
   type: url-test  # 测试类型
   use:
-  #  - provider1   # 使用第一个代理提供者
+    - provider1   # 使用第一个代理提供者
     - provider2   # 使用第二个代理提供者
     - provider3   # 使用第三个代理提供者
 
