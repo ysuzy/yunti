@@ -6,9 +6,9 @@ p: &p
 # 配置代理提供者
 proxy-providers:
   # 第一个代理提供者
-  provider1:
-    <<: *p  # 继承通用配置
-    url: "https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
+  # provider1:
+  #  <<: *p  # 继承通用配置
+  #  url: "https://ghgo.xyz/https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml"
 
   # 第二个代理提供者
   provider2:
@@ -17,13 +17,13 @@ proxy-providers:
 
   provider3:
     <<: *p  # 继承通用配置
-    url: "https://cloud.ysuzy.com:18366/s/clashMeta/294d9732fc9506207d5e347446d2f701"
+    url: "https://cloud.ysuzy.com:18366/s/clashMetaProfiles/294d9732fc9506207d5e347446d2f701"
 
 # URL 测试配置
 u:: &u
   type: url-test  # 测试类型
   use:
-    - provider1   # 使用第一个代理提供者
+  #  - provider1   # 使用第一个代理提供者
     - provider2   # 使用第二个代理提供者
     - provider3   # 使用第三个代理提供者
 
@@ -240,8 +240,6 @@ proxy-groups:
 
   - {name: ☑️ 手动切换, <<: *u, type: select}
 
-  - {name: 🚫广告拦截, udp: true, type: select, proxies: [REJECT, 🎯全球直连]}
-
   - {name: 🎯全球直连, udp: true, type: select, proxies: [DIRECT, 🚀节点选择]}
 
   - {name: ♻️自动选择, <<: *u, interval: 2, type: url-test}
@@ -337,56 +335,249 @@ proxy-groups:
   - {name: 🌐其它地区, <<: *u, type: select, filter: "(?i)^(?!.*(?:🇭🇰|香港|hk_|hongkong|hong kong|🇹🇼|台湾|tw_|taiwan|tai wan|🇯🇵|日本|jp_|japan|🇺🇸|美国|us_|unitedstates|united states|🇸🇬|新加坡|sg_|singapore|🏴󠁵󠁳󠁬󠁡󠁿|洛杉矶|l.a._|losangeles|la sangeles|🇩🇪|德国|de_|germany|🇫🇷|法国|fr_|france|🇨🇦|加拿大|ca_|canada|🇦🇺|澳大利亚|au_|australia|🇰🇷|韩国|kr_|korea|southkorea|south korea|🇷🇺|俄罗斯|ru_|russia|🇳🇱|荷兰|nl_|netherlands|holland|🇮🇳|印度|in_|india|🇲🇾|马来西亚|my_|malaysia|🇵🇱|波兰|pl_|poland|🇪🇪|爱沙尼亚|ee_|estonia|🇦🇪|阿联酋|ae_|uae|unitedarabemirates|united arab emirates|🇳🇬|尼日利亚|ng_|nigeria|🇧🇬|保加利亚|bg_|bulgaria|🇸🇨|塞舌尔|sc_|seychelles|🇬🇧|英国|gb_|greatbritain|great britain|united kingdom|unitedkingdom|🇪🇸|西班牙|es_|spain|🇻🇳|越南|vn_|vietnam|🇸🇽|荷属圣马丁|nn_|sintmaarten|sint maarten|stmaarten|st maarten|🇲🇴|澳门|macao|mo_|🇵🇭|菲律宾|pilipinas|ph_|🇹🇭|泰国|thailand|th_|🇲🇳|蒙古|mongolia|mn_|🏴󠁧󠁢󠁥󠁮󠁧󠁿|英格兰|England)).*$"}
 
 rules:
-  - RULE-SET,private_domain,🟢 直连
-  - RULE-SET,apple_domain,🍎 Apple
-  - RULE-SET,proxylite,🚀 节点选择
-  - RULE-SET,ai,🤖 ChatGPT
-  - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,youtube_domain,📹 YouTube
-  - RULE-SET,google_domain,🍀 Google
-  - RULE-SET,onedrive_domain,🐬 OneDrive
-  - RULE-SET,microsoft_domain,🪟 Microsoft
-  - RULE-SET,tiktok_domain,🎵 TikTok
-  - RULE-SET,speedtest_domain,✈️ Speedtest
-  - RULE-SET,telegram_domain,📲 Telegram
-  - RULE-SET,netflix_domain,🎥 NETFLIX
-  - RULE-SET,paypal_domain,💶 PayPal
-  - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,cn_domain,🎯 全球直连
-  - RULE-SET,google_ip,🍀 Google,no-resolve
-  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
-  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
-  - RULE-SET,cn_ip,🎯 全球直连
-  - MATCH,🐟 漏网之鱼
+  # 全球代理
+  - RULE-SET,Apple,Apple
+  - RULE-SET,PikPak,PikPak
+  - RULE-SET,Google,Google
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,YouTubeMusic,YouTubeMusic
+  - RULE-SET,Twitter,Twitter
+  - RULE-SET,Discord,Discord
+  - RULE-SET,Spotify,Spotify
+  - RULE-SET,Telegram,Telegram
+  - RULE-SET,OpenAI,OpenAI
+  - RULE-SET,GitHub,GitHub
+  - RULE-SET,Facebook,Facebook
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,Disney,Disney
+  - RULE-SET,Cloudflare,Cloudflare
+  - RULE-SET,Bahamut,Bahamut
+  - RULE-SET,Hulu,Hulu
+  - RULE-SET,TVB,TVB
+  - RULE-SET,Niconico,Niconico
+  - RULE-SET,AbemaTV,AbemaTV
+
+  # 全球直连
+  - RULE-SET,LocalAreaNetwork,🎯全球直连
+  - RULE-SET,BiliBili,🎯全球直连
+  - RULE-SET,NetEase,🎯全球直连
+  - RULE-SET,JingDong,🎯全球直连
+  - RULE-SET,58TongCheng,🎯全球直连
+  - RULE-SET,AliPay,🎯全球直连
+  - RULE-SET,Pinduoduo,🎯全球直连
+  - RULE-SET,WeChat,🎯全球直连
+  - RULE-SET,Alibaba,🎯全球直连
+  - RULE-SET,115,🎯全球直连
+  - RULE-SET,4399,🎯全球直连
+  - RULE-SET,Download,🎯全球直连
+  - RULE-SET,MJJ,🎯全球直连
+  - RULE-SET,ChinaMedia,🎯全球直连
+  - RULE-SET,ASNChina,🎯全球直连
+  - GEOSITE,CN,🎯全球直连
+  - GEOIP,CN,🎯全球直连
 
   # 节点代理
   - MATCH,🚀节点选择
 
 rule-anchor:
-  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
-  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
-  qcy: &qcy {type: http, interval: 86400, behavior: domain, format: text}
-  class: &class {type: http, interval: 86400, behavior: classical, format: text}
-rule-providers: 
-  private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
-  proxylite: {!!merge <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/ProxyLite.list"}
-  ai: {!!merge <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/AI.list"}
-  youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
-  google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
-  github_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
-  telegram_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
-  netflix_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
-  paypal_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
-  onedrive_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
-  microsoft_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
-  apple_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
-  speedtest_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
-  tiktok_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
-  gfw_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
-  geolocation-!cn: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
-  cn_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
-  
-  cn_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
-  google_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
-  telegram_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
-  netflix_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
+  ipcidr: &ipcidr {type: http, interval: 600, behavior: ipcidr, format: yaml}
+  domain: &domain {type: http, interval: 600, behavior: domain, format: yaml}
+  classical: &classical {type: http, interval: 600, behavior: classical, format: yaml}
+
+rule-providers:
+  # 嵌套规则
+  Direct:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml"
+    path: ./ruleset/Direct.yaml
+
+  AdvertisingTest:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingTest/AdvertisingTest_Classical.yaml"
+    path: ./ruleset/AdvertisingTest.yaml
+
+  BlockHttpDNS:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml"
+    path: ./ruleset/BlockHttpDNS.yaml
+
+  ASNChina:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.yaml"
+    path: ./ruleset/ASNChina.yaml
+
+  Apple:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml"
+    path: ./ruleset/Apple.yaml
+
+  ChinaMedia:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml"
+    path: ./ruleset/ChinaMedia.yaml
+
+  Download:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Download.yaml"
+    path: ./ruleset/Download.yaml
+
+  LocalAreaNetwork:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml"
+    path: ./ruleset/LocalAreaNetwork.yaml
+
+  MJJ:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/MJJ.yaml"
+    path: ./ruleset/MJJ.yaml
+
+  BiliBili:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
+    path: ./ruleset/BiliBili.yaml
+
+  NetEase:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEase/NetEase.yaml"
+    path: ./ruleset/NetEase.yaml
+
+  JingDong:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/JingDong/JingDong.yaml"
+    path: ./ruleset/JingDong.yaml
+
+  58TongCheng:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/58TongCheng/58TongCheng.yaml"
+    path: ./ruleset/58TongCheng.yaml
+
+  AliPay:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AliPay/AliPay.yaml"
+    path: ./ruleset/AliPay.yaml
+
+  Pinduoduo:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pinduoduo/Pinduoduo.yaml"
+    path: ./ruleset/Pinduoduo.yaml
+
+  WeChat:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml"
+    path: ./ruleset/WeChat.yaml
+
+  Alibaba:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba_Classical.yaml"
+    path: ./ruleset/Alibaba.yaml
+
+  115:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/115/115.yaml"
+    path: ./ruleset/115.yaml
+
+  4399:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/4399/4399.yaml"
+    path: ./ruleset/4399.yaml
+
+  PikPak:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak.yaml"
+    path: ./ruleset/PikPak.yaml
+
+  Google:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml"
+    path: ./ruleset/Google.yaml
+
+  TikTok:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    path: ./ruleset/TikTok.yaml
+
+  YouTube:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
+
+  YouTubeMusic:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml"
+    path: ./ruleset/YouTubeMusic.yaml
+
+  Twitter:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml"
+    path: ./ruleset/Twitter.yaml
+
+  Discord:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml"
+    path: ./ruleset/Discord.yaml
+
+  Spotify:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./ruleset/Spotify.yaml
+
+  Telegram:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"
+    path: ./ruleset/Telegram.yaml
+
+  OpenAI:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml"
+    path: ./ruleset/OpenAI.yaml
+
+  GitHub:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml"
+    path: ./ruleset/GitHub.yaml
+
+  Facebook:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml"
+    path: ./ruleset/Facebook.yaml
+
+  Netflix:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical.yaml"
+    path: ./ruleset/Netflix.yaml
+
+  Disney:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    path: ./ruleset/Disney.yaml
+
+  Cloudflare:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Cloudflare/Cloudflare.yaml"
+    path: ./ruleset/Cloudflare.yaml
+
+  Bahamut:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml"
+    path: ./ruleset/Bahamut.yaml
+
+  Hulu:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hulu/Hulu.yaml"
+    path: ./ruleset/HuluJP.yaml
+
+  TVB:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TVB/TVB.yaml"
+    path: ./ruleset/TVB.yaml
+
+  Niconico:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Niconico/Niconico.yaml"
+    path: ./ruleset/Niconico.yaml
+
+  AbemaTV:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AbemaTV/AbemaTV.yaml"
+    path: ./ruleset/AbemaTV.yaml
