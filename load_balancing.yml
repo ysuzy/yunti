@@ -337,52 +337,27 @@ proxy-groups:
   - {name: 🌐其它地区, <<: *u, type: select, filter: "(?i)^(?!.*(?:🇭🇰|香港|hk_|hongkong|hong kong|🇹🇼|台湾|tw_|taiwan|tai wan|🇯🇵|日本|jp_|japan|🇺🇸|美国|us_|unitedstates|united states|🇸🇬|新加坡|sg_|singapore|🏴󠁵󠁳󠁬󠁡󠁿|洛杉矶|l.a._|losangeles|la sangeles|🇩🇪|德国|de_|germany|🇫🇷|法国|fr_|france|🇨🇦|加拿大|ca_|canada|🇦🇺|澳大利亚|au_|australia|🇰🇷|韩国|kr_|korea|southkorea|south korea|🇷🇺|俄罗斯|ru_|russia|🇳🇱|荷兰|nl_|netherlands|holland|🇮🇳|印度|in_|india|🇲🇾|马来西亚|my_|malaysia|🇵🇱|波兰|pl_|poland|🇪🇪|爱沙尼亚|ee_|estonia|🇦🇪|阿联酋|ae_|uae|unitedarabemirates|united arab emirates|🇳🇬|尼日利亚|ng_|nigeria|🇧🇬|保加利亚|bg_|bulgaria|🇸🇨|塞舌尔|sc_|seychelles|🇬🇧|英国|gb_|greatbritain|great britain|united kingdom|unitedkingdom|🇪🇸|西班牙|es_|spain|🇻🇳|越南|vn_|vietnam|🇸🇽|荷属圣马丁|nn_|sintmaarten|sint maarten|stmaarten|st maarten|🇲🇴|澳门|macao|mo_|🇵🇭|菲律宾|pilipinas|ph_|🇹🇭|泰国|thailand|th_|🇲🇳|蒙古|mongolia|mn_|🏴󠁧󠁢󠁥󠁮󠁧󠁿|英格兰|England)).*$"}
 
 rules:
-  # 广告拦截
-  - AND,((RULE-SET,AdvertisingTest),(NOT,((RULE-SET,Direct)))),🚫广告拦截
-  - RULE-SET,BlockHttpDNS,🚫广告拦截
-  - GEOSITE,Category-Ads-All,🚫广告拦截
-
-  # 全球代理
-  - RULE-SET,Apple,Apple
-  - RULE-SET,PikPak,PikPak
-  - RULE-SET,Google,Google
-  - RULE-SET,TikTok,TikTok
-  - RULE-SET,YouTube,YouTube
-  - RULE-SET,YouTubeMusic,YouTubeMusic
-  - RULE-SET,Twitter,Twitter
-  - RULE-SET,Discord,Discord
-  - RULE-SET,Spotify,Spotify
-  - RULE-SET,Telegram,Telegram
-  - RULE-SET,OpenAI,OpenAI
-  - RULE-SET,GitHub,GitHub
-  - RULE-SET,Facebook,Facebook
-  - RULE-SET,Netflix,Netflix
-  - RULE-SET,Disney,Disney
-  - RULE-SET,Cloudflare,Cloudflare
-  - RULE-SET,Bahamut,Bahamut
-  - RULE-SET,Hulu,Hulu
-  - RULE-SET,TVB,TVB
-  - RULE-SET,Niconico,Niconico
-  - RULE-SET,AbemaTV,AbemaTV
-
-  # 全球直连
-  - RULE-SET,LocalAreaNetwork,🎯全球直连
-  - RULE-SET,BiliBili,🎯全球直连
-  - RULE-SET,NetEase,🎯全球直连
-  - RULE-SET,JingDong,🎯全球直连
-  - RULE-SET,58TongCheng,🎯全球直连
-  - RULE-SET,AliPay,🎯全球直连
-  - RULE-SET,Pinduoduo,🎯全球直连
-  - RULE-SET,WeChat,🎯全球直连
-  - RULE-SET,Alibaba,🎯全球直连
-  - RULE-SET,115,🎯全球直连
-  - RULE-SET,4399,🎯全球直连
-  - RULE-SET,Download,🎯全球直连
-  - RULE-SET,MJJ,🎯全球直连
-  - RULE-SET,ChinaMedia,🎯全球直连
-  - RULE-SET,ASNChina,🎯全球直连
-  - GEOSITE,CN,🎯全球直连
-  - GEOIP,CN,🎯全球直连
+  - RULE-SET,private_domain,🟢 直连
+  - RULE-SET,apple_domain,🍎 Apple
+  - RULE-SET,proxylite,🚀 节点选择
+  - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,google_domain,🍀 Google
+  - RULE-SET,onedrive_domain,🐬 OneDrive
+  - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,tiktok_domain,🎵 TikTok
+  - RULE-SET,speedtest_domain,✈️ Speedtest
+  - RULE-SET,telegram_domain,📲 Telegram
+  - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,paypal_domain,💶 PayPal
+  - RULE-SET,geolocation-!cn,🚀 节点选择
+  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,google_ip,🍀 Google,no-resolve
+  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  - RULE-SET,cn_ip,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
 
   # 节点代理
   - MATCH,🚀节点选择
