@@ -1,3 +1,8 @@
+# https://mihomo.party/docs/guide/override/yaml
+# 延迟检测 URL
+p: &p
+  {type: http, interval: 3600, header: {User-Agent: ["meta", "clash.meta", "Clash/v1.18.0", "clash"]}, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, lazy: true}}
+
 # 配置代理提供者
 proxy-providers:
   # 第一个代理提供者
