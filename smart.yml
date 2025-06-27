@@ -46,54 +46,36 @@ proxy-providers:
       interval: 300
     proxy: 直连      
   
-  无界:
-"机场订阅地址"
-    type: http
-86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-300
-    proxy: 直连   
-   
-  猫耳:
-"机场订阅地址"
-    type: http
-86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-300
-    proxy: 直连   
+ 
 
-  cloudflare
-"https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
+  cloudflare:
+    url: "https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
     type: http
-86400
+    interval: 86400
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-300
+      interval: 300
     proxy: 直连 
     
-  us
-"https://tiyun.ysuzy.com/0862024f-f4fb-47f7-a022-9721f04d6ab7?clash"
+  us:
+    url: "https://tiyun.ysuzy.com/0862024f-f4fb-47f7-a022-9721f04d6ab7?clash"
     type: http
-86400
+    interval: 86400
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-300
+      interval: 300
     proxy: 直连     
 
-  uscc
-"https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
+  uscc:
+  url: "https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
     type: http
-86400
+    interval: 86400
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-300
+      interval: 300
     proxy: 直连           
 
 proxies:
