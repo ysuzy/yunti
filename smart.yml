@@ -6,36 +6,6 @@
 
 proxy-providers:
 
-  火烧云:
-    url: "机场订阅地址"
-    type: 
-    interval: 86400
-    health-check:
-      enable: true
-      url: :
-      interval: 300
-    proxy: 
-    
-  冰云:
-    url: "机场订阅地址"
-    type: 
-    interval: 86400
-    health-check:
-      enable: true
-      url: :
-      interval: 300
-    proxy: 
-
-  小牛:
-    url: "机场订阅地址"
-    type: 
-    interval: 86400
-    health-check:
-      enable: true
-      url: :
-      interval: 300
-    proxy: 直连    
-
   硅谷:
     url: "机场订阅地址"
     type: http
