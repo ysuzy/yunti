@@ -5,6 +5,26 @@
 # 机场节点订阅
 
 proxy-providers:
+    
+  US:
+    url: "https://tiyun.ysuzy.com/0862024f-f4fb-47f7-a022-9721f04d6ab7?clash"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
+
+  uscc:
+    url: "https://cloud.ysuzy.com:18366/s/clashMeta/294d9732fc9506207d5e347446d2f701"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
 
   cf:
     url: "https://cf.ysuzy.com/ebc5e890-e738-4bc9-9d65-3a35ecdb1542/pcl"
@@ -14,79 +34,47 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: 直连      
-  
- 
-
-  cloudflare:
-    url: "https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连 
-    
-  us:
-    url: "https://tiyun.ysuzy.com/0862024f-f4fb-47f7-a022-9721f04d6ab7?clash"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连     
-
-  uscc:
-  url: "https://ti.yunti.us.kg:27901/s/clashMeta/3ef8c4889beba72e0c2eab57315e9ccf"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连           
+    proxy: 直连
 
 proxies:
-{}
-{}
+  - {name: 直连, type: direct}
+  - {name: 拒绝, type: reject}
 
 # ========================
 # 主要端口设置
 # ========================
-7890
-7891
-7892
-7893
-7895
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
 
 allow-lan: true
 mode: rule
 log-level: info
 
-09090
+external-controller: 0.0.0.0:9090
 # external-ui: ui
 # external-ui-name: zashboard
 # external-ui-url: https://gh-proxy.com/github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip
-"123456"
+secret: "123456"
 
 # ========================
 # DNS 设置
 # ========================
 dns:
   enable: true
-07874
+  listen: 0.0.0.0:7874
   ipv6: true
   enhanced-mode: fake-ip
-19816
+  fake-ip-range: 198.20.0.1/16
   nameserver:
     - 223.5.5.5
   fake-ip-filter:
     - +.lan
     - +.local
     - geosite:cn
-# cloudflare    
+# 快猫    
     - +.quickcht3.club
     - +.kuaimao2.club
 # 火烧 
@@ -97,13 +85,13 @@ dns:
 # 猫耳 
     - +.zhunchuanpb.com
     - +.sevenka.top
-# us 
+# BestVPN 
     - +.networklinkpro.net
     - +.prosubnet02.eu
 # 小牛
     - +.4yfu73r3a4kl.com
     - +.xiaoniuyun.cc  
-# cf
+# 硅谷
     - +.huawei-cloud.shop
     - +.huawei-cloud.vip
     - +.gpt-agent.cc      
@@ -113,7 +101,7 @@ dns:
 # 冰云
     - +.bingyun.ink   
     - +.fafhjkah.xyz
-# uscc   
+# uscc
     - +.66jc.top  
     - +.jueduibupao.top  
     
@@ -124,7 +112,7 @@ dns:
     - +.0tk8a3a1q4t94dler.com    
     - +.aerianas.top
 
-ipv6: true
+ipv6: false
 
 # ========================
 # TUN 模块
@@ -150,49 +138,56 @@ default: &default
   type: select
   proxies:
     - 直连
-    - 所有-手选
     - 所有-智选
+    - 所有-手选
     - 香港-智选
-    - 台湾-智选
-    - 日本-智选
-    - 新加坡-智选
-    - 韩国-智选
-    - 美国-智选
-    - 英国-智选
-    - 其他-智选
+    - 香港-故转
+    - 台湾-故转
+    - 日本-故转
+    - 新加坡-故转
+    - 韩国-故转
+    - 美国-故转
+    - 英国-故转
+    - 其他-故转
     - 拒绝
 
 proxy-groups:
 
   # 业务分流组
+
   - {name: ChatGPT, <<: *default}
+  - {name: Gemini, <<: *default}
+  - {name: Copilot, <<: *default}
+  - {name: Perplexity, <<: *default}
   - {name: Claude, <<: *default}
   - {name: Meta AI, <<: *default}
-  - {name: Perplexity, <<: *default}
   - {name: GitHub, <<: *default}
+  - {name: Reddit, <<: *default}
   - {name: Telegram, <<: *default}
-  - {name: Twitter(X), <<: *default}
   - {name: WhatsApp, <<: *default}
   - {name: Facebook, <<: *default}
   - {name: YouTube, <<: *default}
   - {name: TikTok, <<: *default}
-  - {name: Disney, <<: *default}
   - {name: Netflix, <<: *default}
   - {name: HBO, <<: *default}
-  - {name: Spotify, <<: *default}
+  - {name: Disney, <<: *default}
   - {name: Amazon, <<: *default}
-  - {name: Apple, <<: *default}
-  - {name: Microsoft, <<: *default}
-  - {name: Google, <<: *default}
+  - {name: Crunchyroll, <<: *default}
+  - {name: Spotify, <<: *default}
   - {name: Nvidia, <<: *default}
   - {name: Steam, <<: *default}
-  - {name: Game, <<: *default}
+  - {name: Games, <<: *default}
   - {name: Crypto, <<: *default}
+  - {name: Apple, <<: *default}
+  - {name: Google, <<: *default}
+  - {name: Microsoft, <<: *default}
   - {name: Test, <<: *default}
   - {name: Block, <<: *default}
   - {name: 国外, <<: *default}
   - {name: 国内, <<: *default}
   - {name: 其他, <<: *default}
+
+  # 所有组
 
   - name: 所有-手选
     type: select
@@ -202,87 +197,185 @@ proxy-groups:
   - name: 所有-智选
     type: smart
     include-all: true
-#   policy-priority: "香港:1.2;uscc:0.8"
+    policy-priority: "香港:1.2;uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "^((?!(直连|拒绝)).)*$"
 
   # 香港组
+
+  - name: 香港-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 香港-手选
+      - 香港-智选
+  
+  - name: 香港-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(广港|香港|HK|Hong Kong|🇭🇰|HongKong)).*$"
+    
   - name: 香港-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "(?=.*(广港|香港|HK|Hong Kong|🇭🇰|HongKong)).*$"
  
   # 台湾组
+
+  - name: 台湾-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 台湾-手选
+      - 台湾-智选
+  - name: 台湾-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)).*$"
   - name: 台湾-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "(?=.*(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)).*$"
 
   # 日本组
+
+  - name: 日本-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 日本-手选
+      - 日本-智选
+  - name: 日本-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)).*$"
   - name: 日本-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "(?=.*(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)).*$"
 
   # 新加坡组
+
+  - name: 新加坡-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 新加坡-手选
+      - 新加坡-智选
+  - name: 新加坡-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)).*$"
   - name: 新加坡-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "(?=.*(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)).*$"
 
   # 韩国组
+
+  - name: 韩国-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 韩国-手选
+      - 韩国-智选
+  - name: 韩国-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea)).*$"
   - name: 韩国-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "(?=.*(广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea)).*$"
 
   # 美国组
+
+  - name: 美国-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 美国-手选
+      - 美国-智选
+  - name: 美国-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States)).*$"
   - name: 美国-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "(?=.*(广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States)).*$"
 
   # 英国组
+
+  - name: 英国-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 英国-手选
+      - 英国-智选
+  - name: 英国-手选
+    type: select
+    include-all: true
+    filter: "(?=.*(英国|英|伦敦|UK|United Kingdom|🇬🇧|London)).*$"
   - name: 英国-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
     filter: "(?=.*(英国|英|伦敦|UK|United Kingdom|🇬🇧|London)).*$"
 
   # 其他组
+  
+  - name: 其他-故转
+    type: fallback
+    interval: 300
+    lazy: false
+    proxies:
+      - 其他-手选
+      - 其他-智选
+  - name: 其他-手选
+    type: select
+    include-all: true
+    filter: "^((?!(直连|拒绝|广港|香港|HK|Hong Kong|🇭🇰|HongKong|广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|广新|新加坡|SG|坡|狮城|🇸🇬|Singapore|广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea|广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States|英国|UK|United Kingdom|伦敦|英|London|🇬🇧)).)*$"
   - name: 其他-智选
     type: smart
     include-all: true
-#   policy-priority: "uscc:0.8"
+    policy-priority: "uscc:0.8"
     uselightgbm: true
     collectdata: true
     interval: 300
@@ -299,13 +392,14 @@ rules:
   - RULE-SET,Claude / Domain,Claude
   - RULE-SET,Meta AI / Domain,Meta AI
   - RULE-SET,Perplexity / Domain,Perplexity
+  - RULE-SET,Copilot / Domain,Copilot
+  - RULE-SET,Gemini / Domain,Gemini
+  - RULE-SET,Reddit / Domain,Reddit 
   - RULE-SET,GitHub / Domain,GitHub
   - RULE-SET,Telegram / Domain,Telegram
-  - RULE-SET,Telegram / IP,Telegram,no-resolve
-  - RULE-SET,Twitter / Domain,Twitter(X)
+  - RULE-SET,Telegram / IP,Telegram
   - RULE-SET,WhatsApp / Domain,WhatsApp
   - RULE-SET,Facebook / Domain,Facebook
-  - RULE-SET,Amazon / Domain,Amazon
   - RULE-SET,Apple / Domain,Apple
   - RULE-SET,Apple-CN / Domain,Apple  
   - RULE-SET,Microsoft / Domain,Microsoft
@@ -317,18 +411,22 @@ rules:
   - RULE-SET,Netflix / Domain,Netflix
   - RULE-SET,Netflix / IP,Netflix,no-resolve
   - RULE-SET,Disney / Domain,Disney
+  - RULE-SET,Amazon / Domain,Amazon
+  - RULE-SET,Crunchyroll / Domain,Crunchyroll
   - RULE-SET,HBO / Domain,HBO
   - RULE-SET,Spotify / Domain,Spotify
   - RULE-SET,Steam / Domain,Steam
-  - RULE-SET,Epic / Domain,Game
-  - RULE-SET,EA / Domain,Game
-  - RULE-SET,Blizzard / Domain,Game
-  - RULE-SET,UBI / Domain,Game
-  - RULE-SET,PlayStation / Domain,Game
-  - RULE-SET,Nintend / Domain,Game
+  - RULE-SET,Epic / Domain,Games
+  - RULE-SET,EA / Domain,Games
+  - RULE-SET,Blizzard / Domain,Games
+  - RULE-SET,UBI / Domain,Games
+  - RULE-SET,PlayStation / Domain,Games
+  - RULE-SET,Nintend / Domain,Games
   - RULE-SET,Google / Domain,Google
   - RULE-SET,Google / IP,Google,no-resolve
-  - RULE-SET,Nvidia / Domain,Nvidia
+  - RULE-SET,Nvidia / Domain,Nvidia 
+  - RULE-SET,Telegram / IP,国外
+  - RULE-SET,Telegram / Domain,国外
   - RULE-SET,Proxy / Domain,国外
   - RULE-SET,Globe / Domain,国外  
   - RULE-SET,Direct / Domain,国内
@@ -389,7 +487,6 @@ rule-providers:
   Nvidia / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Nvidia/Nvidia.list"}
   Crunchyroll / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Crunchyroll.list"}
   Reddit / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/reddit.mrs"}
-
   Youtube / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}  
   Google / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}  
   Google / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"}
