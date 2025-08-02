@@ -6,8 +6,8 @@
 
 proxy-providers:
 
-  硅谷:
-    url: "机场订阅地址"
+  cf:
+    url: "https://cf.ysuzy.com/ebc5e890-e738-4bc9-9d65-3a35ecdb1542/pcl"
     type: http
     interval: 86400
     health-check:
@@ -103,7 +103,7 @@ dns:
 # 小牛
     - +.4yfu73r3a4kl.com
     - +.xiaoniuyun.cc  
-# 硅谷
+# cf
     - +.huawei-cloud.shop
     - +.huawei-cloud.vip
     - +.gpt-agent.cc      
