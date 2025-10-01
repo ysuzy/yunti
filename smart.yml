@@ -26,16 +26,6 @@ proxy-providers:
       interval: 300
     proxy: 直连
 
-  cf:
-    url: "https://cf.ysuzy.com/ebc5e890-e738-4bc9-9d65-3a35ecdb1542/pcl"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
-
 proxies:
   - {name: 直连, type: direct}
   - {name: 拒绝, type: reject}
