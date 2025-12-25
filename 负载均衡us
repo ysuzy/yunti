@@ -6,9 +6,9 @@ p: &p
 # 配置代理提供者
 proxy-providers:
   # 第一个代理提供者
-  # provider1:
-  #  <<: *p  # 继承通用配置
-  #  url: "https://ghgo.xyz/https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml"
+  provider1:
+    <<: *p  # 继承通用配置
+    url: "https://cf.ysuzy.com/sub?token=04f28ac089e5af2afc563a4989b227f9&clash"
 
   # 第二个代理提供者
   provider2:
@@ -23,7 +23,7 @@ proxy-providers:
 u:: &u
   type: url-test  # 测试类型
   use:
-  #  - provider1   # 使用第一个代理提供者
+    - provider1   # 使用第一个代理提供者
     - provider2   # 使用第二个代理提供者
     - provider3   # 使用第三个代理提供者
 
