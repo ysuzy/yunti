@@ -19,6 +19,10 @@ proxy-providers:
     <<: *p  # 继承通用配置
     url: "https://cloud.ysuzy.com:18366/s/clashMeta/294d9732fc9506207d5e347446d2f701"
 
+  provider4:
+    <<: *p  # 继承通用配置
+    url: "https://xui.ysuzy.com:2096/xui/yr8id63xl83omu6w"
+
 # URL 测试配置
 u:: &u
   type: url-test  # 测试类型
@@ -26,6 +30,7 @@ u:: &u
     - provider1   # 使用第一个代理提供者
     - provider2   # 使用第二个代理提供者
     - provider3   # 使用第三个代理提供者
+    - provider4   # 使用第四个代理提供者
 
 port: 7890  # HTTP 代理端口
 socks-port: 7891  # SOCKS5 代理端口
