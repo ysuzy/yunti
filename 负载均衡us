@@ -17,7 +17,7 @@ proxy-providers:
 
   provider3:
     <<: *p  # 继承通用配置
-    url: "https://cloud.ysuzy.com:18366/s/clashMeta/294d9732fc9506207d5e347446d2f701"
+    url: "https://ti.ysuzy.us.ci/sub?token=8913fb1f4fd3e8c461923bd38ce8769c"
 
   provider4:
     <<: *p  # 继承通用配置
