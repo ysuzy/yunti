@@ -8,7 +8,7 @@ proxy-providers:
   # 第一个代理提供者
   provider1:
     <<: *p  # 继承通用配置
-    url: "https://cfv.ysuzy.com/sub?token=04f28ac089e5af2afc563a4989b227f9"
+    url: "https://cfv.ysuzy.com/sub?token=6b9b095967bdeeb58d66d4d993e6d6aa"
 
   # 第二个代理提供者
   provider2:
