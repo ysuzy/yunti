@@ -21,7 +21,7 @@ proxy-providers:
 
   provider4:
     <<: *p  # 继承通用配置
-    url: "https://xui.ysuzy.com:34826/s/clashMeta/8f9fcbdd1c89d2201afa3493bf18420a"
+    url: "https://yunti.ysuzy.com/s/clashMeta/b713d794e4c37d0b1493e63f9d871138"
 
 # URL 测试配置
 u:: &u
