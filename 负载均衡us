@@ -13,7 +13,7 @@ proxy-providers:
   # 第二个代理提供者
   provider2:
     <<: *p  # 继承通用配置
-    url: "https://tiyun.ysuzy.com/0862024f-f4fb-47f7-a022-9721f04d6ab7?clash"
+    url: "https://yunti.ysuzy.com:41636/s/clashMeta/f3bc2f097ff940074ea6f004035341c1"
 
   provider3:
     <<: *p  # 继承通用配置
@@ -21,7 +21,7 @@ proxy-providers:
 
   provider4:
     <<: *p  # 继承通用配置
-    url: "https://yunti.ysuzy.com:17999/s/clashMeta/df4ea81d6ffc5e98ff36c1256a22c593"
+    url: "https://yunti.ysuzy.com:41636/s/clashMeta/df4ea81d6ffc5e98ff36c1256a22c593"
 
 # URL 测试配置
 u:: &u
