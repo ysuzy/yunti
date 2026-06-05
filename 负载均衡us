@@ -13,7 +13,7 @@ proxy-providers:
   # 第二个代理提供者
   provider2:
     <<: *p  # 继承通用配置
-    url: "https://tiyun.cc.cd:443/s/clashMetaProfiles/df4ea81d6ffc5e98ff36c1256a22c593"
+    url: "https://tiyun.cc.cd:443/s/clashMeta/df4ea81d6ffc5e98ff36c1256a22c593"
 
   provider3:
     <<: *p  # 继承通用配置
