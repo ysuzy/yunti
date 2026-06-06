@@ -19,9 +19,9 @@ proxy-providers:
     <<: *p  # 继承通用配置
     url: "https://ti.ysuzy.us.ci/sub?token=8913fb1f4fd3e8c461923bd38ce8769c"
 
-  provider4:
-    <<: *p  # 继承通用配置
-    url: "https://tiyun.cc.cd:443/s/clashMeta/df4ea81d6ffc5e98ff36c1256a22c593"
+  #provider4:
+    #<<: *p  # 继承通用配置
+    #url: "https://tiyun.cc.cd:443/s/clashMeta/df4ea81d6ffc5e98ff36c1256a22c593"
 
 # URL 测试配置
 u:: &u
